@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Franklin:700);
+
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+
+@import url(https://fonts.googleapis.com/css?family=Overpass+Mono:400,700,400italic);
+
+
+body, h3 { font-family: 'Libre Baskerville', serif; }
+
+h1, h2 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: normal;
+}
+
+.remark-code, .remark-inline-code { font-family: 'Overpass Mono'; }
+
+.large { font-size: 130% }
+.small { font-size: 70% }
