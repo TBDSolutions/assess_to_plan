@@ -15,6 +15,11 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(tidyverse); library(feather); library(plotly);library(DT)
+# Load needs mapping table (created by "prep/sis_mappings.R" script)
+needs <- read.csv("data/needs.csv") 
+# Load de-identified data
+scrub_sis <- read_feather("data/scrub_sis.feather")
 ```
 class: inverse, right, bottom
 background-image: url("images/maps.jpg")
@@ -54,9 +59,6 @@ background-size: 50% 100%
 
 .pull-right[
 ## Why bother?
-- Why use assessment data? 
-- Why not just talk? 
-- What’s the point?
 ]
 
 ???
@@ -64,6 +66,52 @@ background-size: 50% 100%
 - *Why use assessment data?*: Don't reinvent the wheel. Use a common language about areas of need can serve as a platform.  Information from the assessment can provide consistent language for discussing goals and needs as part of person-centered planning.
 - *Why not just talk?*: The purpose of using information *is* to kickstart a meaningful and comprehensive conversation.
 - *What’s the point?*: Use information to spark reflection. Observations from data can be an opportunity for self-discovery. It is not the final word, but a starting point for reflection. *Example*: Myers-Briggs, StrengthsFinder, etc.
+
+---
+class: right, middle
+
+.pull-left[
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+read_feather("data/sc_uses.feather") %>%
+  plot_ly(
+    x = ~short_desc, 
+    y = ~pct, 
+    color = ~freq,
+    hoverinfo = 'text',
+    text = ~paste(n, " out of ", responders," supports coordinators (",pct,"%)<br>",
+                  "said they ", tolower(freq), " used assessment data to<br>",
+                  tolower(long_desc))
+  ) %>% 
+  add_bars(colors = c("#83AF9B","#C8C8A9","#FC9D9A","#FE4365")) %>% 
+  layout(
+    margin = list(b = 50),
+    barmode = 'stack',
+    xaxis = list(title = ""),
+    yaxis = list(title = "% indicating current use", range = c(0, 100))
+  )
+```
+]
+
+.pull-right[
+## Uses
+]
+
+???
+
+### Notes
+
+*Supports coordinators indicated that they used information from the assessment during the PCP process*
+
+According to a [white paper](https://j-hagedorn.github.io/sis_user_survey/survey_analysis.html#use_in_person-centered_planning) approved by the SIS Steering Committee and based on surveys and focus groups across the states, assessment data might be used in the following ways to support person-centered planning:
+
+- Recommend individual support needs to inform an individualized plan of service (IPOS)
+- Identify potential goals and objectives for inclusion in the IPOS
+- Identify potential referrals for additional assessments or relevant services
+- Help guide safety planning by identifying areas of risk
+- Design an individualized menu of services to support an individual to live independently in the community
+- Identify individual strengths for inclusion in the IPOS
+- Provide guidance regarding supports which may provide alternatives to guardianship
+- Identify areas of specific personal interest or areas on which the individual wishes to focus
 
 ---
 class: right, middle 
@@ -85,6 +133,74 @@ class: center, middle
 
 # Example
 
+.pull-left[.small[
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+needs_sections <- 
+  needs %>% 
+  group_by(section,section_desc) %>% 
+  summarize() %>%
+  ungroup() %>%
+  mutate(
+    section = str_replace(section,"Q",""),
+    section = str_replace(section,"3A","3")
+  )
+
+sample_1 <-
+scrub_sis %>%
+  filter(fake_id == "10761181") %>%
+  group_by(fake_id) %>%
+  filter(sis_date == max(sis_date)) %>%
+  select(fake_id,starts_with("scr_")) %>%
+  gather(section,score,everything(),-fake_id) %>%
+  filter(!is.na(score)) %>% 
+  mutate(section = str_replace(section,"scr_","")) %>%
+  separate(section, into = c("section","score_type"),sep = "_") %>%
+  left_join(needs_sections, by = "section") %>%
+  ungroup()
+
+sample_1 %>%
+  filter(is.na(section_desc)==F) %>%
+  spread(score_type,score) %>%
+  select(section,section_desc,raw,std,pct) %>%
+  filter(str_detect(section,"^2")) %>%
+  select(-section) %>%
+  DT::datatable(
+    rownames = F,
+    colnames = c('Subscale', 'Total Raw Score', 'Std Score', '%ile'),
+    options = list(dom = 't')
+  )
+```
+]]
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.width = 6}
+sample_1 %>%
+  filter(score_type %in% c("pct","percentile")) %>%
+  mutate(
+    section_desc = case_when(
+      section == "sni" ~ "Support Index %ile",
+      TRUE ~ as.character(section_desc)
+    )
+  ) %>%
+  select(section_desc,score) %>%
+  plot_ly(x = ~section_desc, y = ~score) %>%
+  add_lines() %>%
+  add_markers(color = I("#6a5acd")) %>%
+  layout(
+    title = "Activity Subscale and Composite Score Profile",
+    showlegend = FALSE,
+    xaxis = list(
+      title = "Life Activity Subscale"
+    ),
+    yaxis = list(
+      title = "Percentile",
+      range = c(0, 100)
+    ),
+    margin = list(l = 50, r = 70,b = 120,t = 100,pad = 4)
+  )
+```
+
+]
 ---
 class: right, middle 
 background-image: url("images/weather.jpg")
@@ -148,7 +264,7 @@ class: left, middle
 **Self Determination**          | Lifelong Learning, Protection and Advocacy, Social Activities
 **Social Inclusion**           | Community Living, Lifelong Learning, Protection and Advocacy
 
-*Based on van Loon, J., et al. Assessing Individual Support Needs to Enhance Personal Outcomes.*
+.small[*Based on van Loon, J., et al. Assessing Individual Support Needs to Enhance Personal Outcomes.*]
 
 ???
 
