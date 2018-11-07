@@ -205,7 +205,7 @@ background-size: 50%
 
 .pull-left[
 ```{r, echo=FALSE, out.width = "100%",fig.align='center'}
-knitr::include_graphics("images/weather.jpg")
+knitr::include_graphics("images/weather.JPG")
 ```
 ]
 
@@ -239,11 +239,14 @@ Research indicates that:
 ### Notes:
 
 *Take the broad view*:
+
 - Because what you start with influences what you get.
 - If an assessment is broad enough to cover multiple areas of a person’s life, it can set the stage for a person-centered planning process which encompasses all areas of a person’s life.
 
 *Say No to COPY|PASTE*:
-- Defaults and the temptation to copy/paste (Sunstein, 2008).  - Would you rather have the default scope for the PCP discussion be all life areas, or the ones addressed last year?
+
+- Defaults and the temptation to copy/paste (Sunstein, 2008).  
+- Would you rather have the default scope for the PCP discussion be all life areas, or the ones addressed last year?
 
 *Provide Clear Choices*:
 - Because trying to juggle too many balls needs us to drop them all
@@ -275,8 +278,8 @@ class: left, middle
 Ask audience for examples of things they would like to improve in their lives.  
 
 ---
-class: inverse, left, middle 
-background-image: url("images/no.jpg")
+class: left, middle 
+background-image: url("images/stop.jpg")
 background-position: left
 background-size: 50% 100%
 
