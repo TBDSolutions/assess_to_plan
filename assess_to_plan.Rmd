@@ -18,7 +18,7 @@ options(htmltools.dir.version = FALSE)
 ```
 class: inverse, right, bottom
 background-image: url("images/maps.jpg")
-background-position: 0% 100%
+background-position: 0% 0%
 background-size: cover
 
 ## Informed Choices
@@ -33,51 +33,200 @@ background-size: 61% 100%
 
 .pull-right[
 ## Your trusty guides:
-- Laura Demeuse
-- Joshua Hagedorn
+- Laura Demeuse | .small[*MDHHS*]
+- Joshua Hagedorn | .small[*TBD Solutions*]
 ]
 
 ???
-## Notes:
-- Note 1
-- Note 2
+Before we get started, let’s get settled.
+
+We’re talking about how to supplement a specific portion of the PCP process, but this doesn’t replace the basics!
+
+### Quick Self-Test:
+- Are you looking into the person’s eyes?
+- Is your body facing the person or a screen?
 
 ---
 class: inverse, right, middle 
-background-image: url("images/iceberg.jpg")
+background-image: url("images/convo.jpg")
 background-position: left
-background-size: 61% 100%
+background-size: 50% 100%
 
 .pull-right[
-# New
-- Content
-- Content
+## Why bother?
+- Why use assessment data? 
+- Why not just talk? 
+- What’s the point?
 ]
 
 ???
-## Notes:
-- Note 1
-- Note 2
+### Notes
+- *Why use assessment data?*: Don't reinvent the wheel. Use a common language about areas of need can serve as a platform.  Information from the assessment can provide consistent language for discussing goals and needs as part of person-centered planning.
+- *Why not just talk?*: The purpose of using information *is* to kickstart a meaningful and comprehensive conversation.
+- *What’s the point?*: Use information to spark reflection. Observations from data can be an opportunity for self-discovery. It is not the final word, but a starting point for reflection. *Example*: Myers-Briggs, StrengthsFinder, etc.
 
 ---
-class: inverse, right, middle 
-background-image: url("images/suitcases.jpg")
-background-position: left
-background-size: 61% 100%
+class: right, middle 
+background-image: url("images/pencils.jpg")
+background-position: 0% 0%
+background-size: cover
+
+# Let's try it out
+
+???
+### Notes:
+- *Step 1*:  Split room in half.  Then, split each half into 2 sections.  These sections correspond to ‘Snap Judgment’ and ‘Data Only’
+- *Step 2*:  Select one person from each section to go through a pre-plan process
+- *Step 3*:  Hand out sheets
+- *Step 4*:  For each group, ask “What was missing?”, “How close was this to a rushed PCP pre-plan?”
+
+---
+class: center, middle 
+
+# Example
+
+---
+class: right, middle 
+background-image: url("images/weather.jpg")
+background-position: 10%
+background-size: 50%
+
+## Act natural
+
+???
+### Notes:
+- Conversational data...
+- Can you think of a way to have a natural conversation using the data shown here?
+- How might you use assessment data similarly?
+
+---
+class: inverse, left, middle 
+
+# Framing a Conversation
+
+.pull-left[
+- ### Take a Broad View
+- ### Say No to COPY|PASTE
+- ### Provide Clear Choices
+]
 
 .pull-right[
-# New
-- Content
-- Content
+Research indicates that:
+- We are influenced by our starting point (Sunstein, 2008)
+- Simplifying options increases participation ([Iyengar, 2010](https://www0.gsb.columbia.edu/mygsb/faculty/research/pubfiles/4519/simplicitySeeking.pdf))
+- Providing categories to choose from increases satisfaction with choice ([Mogilner, 2008](https://pdfs.semanticscholar.org/706b/84d3567ba03939c3748c94dae36a74a5a64f.pdf)).
 ]
 
 ???
-## Notes:
-- Note 1
-- Note 2
+### Notes:
+
+*Take the broad view*:
+- Because what you start with influences what you get.
+- If an assessment is broad enough to cover multiple areas of a person’s life, it can set the stage for a person-centered planning process which encompasses all areas of a person’s life.
+
+*Say No to COPY|PASTE*:
+- Defaults and the temptation to copy/paste (Sunstein, 2008).  - Would you rather have the default scope for the PCP discussion be all life areas, or the ones addressed last year?
+
+*Provide Clear Choices*:
+- Because trying to juggle too many balls needs us to drop them all
+- Simplify without over-simplifying: an art
+- Informed by, not determined by!  Use in pre-planning allows the person to decide what gets addressed during their PCP Meeting.
+
+---
+class: left, middle
+
+## Where Do Your Goals Fit?
+
+*I want to improve my...*   | *So I need some support with...*
+--------------------------- | -------------------------------- 
+**Emotional Wellbeing**         | Behavioral Supports, Health and **Safety**
+**Relationships** | Social Activities, Community Living
+**Material Wellbeing**         | Employment
+**Personal Development**       | Health and Safety, Lifelong Learning
+**Physical Wellbeing**         | Health and Safety, Home Living, Lifelong Learning, Medical Supports
+**Rights**                      | Protection and Advocacy
+**Self Determination**          | Lifelong Learning, Protection and Advocacy, Social Activities
+**Social Inclusion**           | Community Living, Lifelong Learning, Protection and Advocacy
+
+*Based on van Loon, J., et al. Assessing Individual Support Needs to Enhance Personal Outcomes.*
+
+???
+
+### Notes:
+
+Ask audience for examples of things they would like to improve in their lives.  
+
+---
+class: inverse, left, middle 
+background-image: url("images/no.jpg")
+background-position: left
+background-size: 50% 100%
+
+.pull-right[
+## Please do *not*...
+- Just copy/paste from the assessment
+- Treat a [person-as-a-data-point](https://www.nytimes.com/2011/02/27/opinion/27verghese.html)
+- Use 'because the assessment said' as the reason for a goal
+]
+
+???
+
+### Notes:
+
+*Person-as-a-data-point*: If it was as easy to transform a person’s life as it is to change a data point, then we’d all have much easier jobs!
+*Because the assessment said*: ~~“Per the SIS John needs the most support in Self Care therefore he will have 23 hours of CLS a week”~~
+
+---
+class: inverse, left, middle
+
+## Official Guidance
+
+.pull-left[
+### Related to parity
+“…this approach will not establish or serve as the authorization for the supports and services of an individual and will be used to inform the person-centered planning process which is driven by the individual.”
+
+*Wieferich, J. (2018, October 1). Parity (Letter to PIHP and CMHSP Executive Directors).*
+]
+
+.pull-right[
+### Also, do NOT use...
+- "As an arbitrary methodology for determining the amount, scope, and duration… outside of a person-centered planning process."
+- "As a means for achieving budget reductions."
+- "As a process which supplants use of medical necessity criteria..."
+
+*Renwick, T. (2015, October 22). Inappropriate Use of Assessments and Screening Tools (Letter to PIHP Executive Directors).*
+]
+
+---
+class: center, middle 
+background-image: url("images/balloon_chair.jpg")
+background-position: left
+background-size: 50% 100%
+
+.pull-right[
+# Demo
+]
 
 ---
 class: center, middle
 background-image: url(http://www.tbdsolutions.com/wp-content/themes/tbdsolutions/images/logo.png)
 
+---
+class: left, middle
+background-image: url("images/paper.jpg")
+background-color: transparent
+background-position: 0% 0%
+background-size: cover
 
+## If you like reading…
+
+.small[
+- Bambara, L. M., & Gomez, O. N. (2001). Using a self-instructional training package to teach complex problem-solving skills to adults with moderate and severe disabilities. *Education and Training in Mental Retardation and Developmental Disabilities*, 386-400.
+- Croft, B., İsvan, N., Parish, S. L., & Mahoney, K. J. (2018). Housing and Employment Outcomes for Mental Health Self-Direction Participants. *Psychiatric Services*.
+- Fowler, C. H., Konrad, M., Walker, A. R., Test, D. W., & Wood, W. M. (2007). Self-determination interventions' effects on the academic performance of students with developmental disabilities. *Education and Training in Developmental Disabilities*, 270-285.
+- Iyengar, S. S., & Lepper, M. R. (2002). Choice and its consequences: On the costs and benefits of self-determination. In A. Tesser, D. A. Stapel, & J. V. Wood (Eds.), *Self and motivation: Emerging psychological perspectives* (pp. 71-96). Washington, DC, US: American Psychological Association. 
+- Iyengar, S. S., & Kamenica, E. (2010). Choice proliferation, simplicity seeking, and asset allocation. *Journal of Public Economics*, 94(7-8), 530-539.
+- Mogilner, C., Rudnick, T., & Iyengar, S. S. (2008). The mere categorization effect: How the presence of categories increases choosers' perceptions of assortment variety and outcome satisfaction. *Journal of Consumer Research*, 35(2), 202-215.
+- Sunstein, C. & Thaler, R.H. (2008). *Nudge: Improving decisions about health, wealth, and happiness*.
+- Wehmeyer, M. L., Palmer, S. B., Shogren, K., Williams-Diehm, K., & Soukup, J. H. (2013). Establishing a causal relationship between intervention to promote self-determination and enhanced student self-determination. *The Journal of Special Education*, 46(4), 195-210.
+]
