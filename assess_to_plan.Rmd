@@ -23,24 +23,22 @@ scrub_sis <- read_feather("data/scrub_sis.feather")
 ```
 class: inverse, right, bottom
 background-image: url("images/maps.jpg")
-background-position: 0% 0%
-background-size: cover
+background-position: top left
+background-size: 100% 70%
 
 ## Informed Choices
-### Using Assessment Data in Person-Centered Planning
+#### Using Assessment Data in Person-Centered Planning
 On: 2018.11.14 | Follow along: [bit.ly/sis_pcp](http://bit.ly/sis_pcp)
 
 ---
-class: inverse, right, middle 
+class: inverse, right, bottom 
 background-image: url("images/audience.jpg")
-background-position: left
-background-size: 61% 100%
+background-position: top left
+background-size: 100% 70%
 
-.pull-right[
 ## Your trusty guides:
 - Laura Demeuse | .small[*MDHHS*]
 - Joshua Hagedorn | .small[*TBD Solutions*]
-]
 
 ???
 Before we get started, let’s get settled.
@@ -92,9 +90,7 @@ read_feather("data/sc_uses.feather") %>%
 ```
 ]
 
-.pull-right[
 ## Uses
-]
 
 ???
 
@@ -203,9 +199,15 @@ sample_1 %>%
 ]
 ---
 class: right, middle 
-background-image: url("images/weather.jpg")
-background-position: 10%
+background-image: url("images/rain.jpg")
+background-position: right
 background-size: 50%
+
+.pull-left[
+```{r, echo=FALSE, out.width = "100%",fig.align='center'}
+knitr::include_graphics("images/weather.jpg")
+```
+]
 
 ## Act natural
 
