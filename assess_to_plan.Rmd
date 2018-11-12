@@ -127,7 +127,7 @@ background-size: cover
 ---
 class: center, middle 
 
-# Example
+# Sample Report
 
 .pull-left[.small[
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
@@ -141,9 +141,11 @@ needs_sections <-
     section = str_replace(section,"3A","3")
   )
 
+selected_id <- "10761181"
+
 sample_1 <-
 scrub_sis %>%
-  filter(fake_id == "10761181") %>%
+  filter(fake_id == selected_id) %>%
   group_by(fake_id) %>%
   filter(sis_date == max(sis_date)) %>%
   select(fake_id,starts_with("scr_")) %>%
@@ -162,6 +164,7 @@ sample_1 %>%
   select(-section) %>%
   DT::datatable(
     rownames = F,
+    caption = "Support Needs Ratings",
     colnames = c('Subscale', 'Total Raw Score', 'Std Score', '%ile'),
     options = list(dom = 't')
   )
@@ -197,6 +200,81 @@ sample_1 %>%
 ```
 
 ]
+
+???
+
+### Notes:
+
+- Note that the items here are summarized by section, and thus don't get down to the most specific level of detail.  Discuss how to work with this during planning session.
+- Note that neither presenter is a trained SIS assessor or QI lead, and thus not specially trained in item intent.  Since Supports COordinators are also not likely to be trained as such, this allows us to speak to a more general utlitity of the assessment output.
+
+---
+class: center, middle 
+
+# Sample Report *(cont'd)*
+
+.pull-left[.small[
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+scrub_sis %>%
+  filter(fake_id == selected_id) %>%
+  group_by(fake_id) %>%
+  filter(sis_date == max(sis_date)) %>%
+  select(fake_id,starts_with("Q3")) %>%
+  select(-ends_with("_ImportantTo"),-ends_with("_ImportantFor")) %>%
+  gather(section,score,everything(),-fake_id) %>%
+  filter(!is.na(score)) %>% 
+  separate(section, into = c("section","score_type"),sep = "_") %>%
+  mutate(section = paste0(section,"_")) %>%
+  group_by(section) %>%
+  summarize(score = sum(score)) %>%
+  left_join(needs, by = c("section" = "item")) %>%
+  select(item_desc,score)%>%
+  arrange(desc(score)) %>%
+  DT::datatable(
+    rownames = F,
+    caption = "Protection and Advocacy Scale",
+    colnames = c('Activities in Rank Order', 'Raw Score'),
+    options = list(dom = 't')
+  )
+```
+
+]]
+
+.pull-right[.small[
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+scrub_sis %>%
+  filter(fake_id == selected_id) %>%
+  group_by(fake_id) %>%
+  filter(sis_date == max(sis_date)) %>%
+  select(fake_id,starts_with("Q1")) %>%
+  select(-ends_with("_ImportantTo"),-ends_with("_ImportantFor")) %>%
+  gather(section,score,everything(),-fake_id) %>%
+  filter(!is.na(score)) %>% 
+  separate(section, into = c("section","score_type"),sep = "_") %>%
+  mutate(section = str_sub(section,1,3)) %>%
+  mutate(is_two = score >= 2) %>%
+  group_by(section) %>%
+  summarize(
+    score = sum(score),
+    has_2 = sum(is_two)
+  ) %>%
+  left_join(needs %>% distinct(section, .keep_all = T), by = "section") %>%
+  select(section_desc,score,has_2) %>%
+  mutate(
+    over_5 = ifelse(score > 5,"Yes","No"),
+    has_2  = ifelse(has_2 == T,"Yes","No")
+  ) %>%
+  arrange(desc(score)) %>%
+  DT::datatable(
+    rownames = F,
+    caption = "Exceptional Medical / Behavioral Support Needs",
+    colnames = c('Activity', 'Total Points','*Total Points > 5','*Any Item Circled 2'),
+    options = list(dom = 't')
+  )
+```
+
+]]
+
 ---
 class: right, middle 
 background-image: url("images/rain.jpg")
