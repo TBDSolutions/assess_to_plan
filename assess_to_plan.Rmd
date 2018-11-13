@@ -407,6 +407,45 @@ background-size: 50% 100%
 ]
 
 ---
+class: left, top
+
+# A sketch
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, fig.align='left'}
+
+library(sunburstR)
+
+sunburst_df <- read_feather("data/sunburst_df.feather")
+
+personal_items <- unique(unlist(strsplit(sunburst_df$path[sunburst_df$domain == "Personal"], '-')))
+interpersonal_items <- unique(unlist(strsplit(sunburst_df$path[sunburst_df$domain == "Interpersonal"], '-')))
+environment_items <- unique(unlist(strsplit(sunburst_df$path[sunburst_df$domain == "Environment"], '-')))
+legend_items <- c(personal_items,interpersonal_items,environment_items)
+
+
+cols <- 
+  c(
+    colorRampPalette(RColorBrewer::brewer.pal(9, 'Blues'))(length(personal_items)),
+    colorRampPalette(RColorBrewer::brewer.pal(9, 'Oranges'))(length(interpersonal_items)),
+    colorRampPalette(RColorBrewer::brewer.pal(9, 'Greens'))(length(environment_items))
+  )
+
+sunburst_df %>%
+  ungroup() %>%
+  select(path,score) %>%
+  arrange(score) %>% 
+  sunburst(
+    colors = list(
+      range=cols,
+      domain=legend_items
+    ),
+    width="100%",
+    height=300
+  )
+
+```
+
+---
 class: center, middle
 background-image: url(http://www.tbdsolutions.com/wp-content/themes/tbdsolutions/images/logo.png)
 
