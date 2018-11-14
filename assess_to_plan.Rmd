@@ -49,6 +49,10 @@ We’re talking about how to supplement a specific portion of the PCP process, b
 - Are you looking into the person’s eyes?
 - Is your body facing the person or a screen?
 
+We want to be understood. When a person tells us how they see us, we want to recognize ourselves.  Perhaps even more than we want to be seen as positive, we want to be seen for who we are.
+
+An assessment is a mirror that we hold up to let someone see themselves. If they cannot find their reflection, they will distrust the mirror. 
+
 ---
 class: inverse, right, middle 
 background-image: url("images/convo.jpg")
@@ -60,9 +64,11 @@ background-size: 50% 100%
 ]
 
 ???
+
 ### Notes
+
 - *Why use assessment data?*: Don't reinvent the wheel. Use a common language about areas of need can serve as a platform.  Information from the assessment can provide consistent language for discussing goals and needs as part of person-centered planning.
-- *Why not just talk?*: The purpose of using information *is* to kickstart a meaningful and comprehensive conversation.
+- *Why not just talk?*: The purpose of using information *is* to kickstart a meaningful and comprehensive conversation.  We need to acknowledge from the outset that an assessment will always be a simplified reflection, like a Picasso portrait or a blocky video game.
 - *What’s the point?*: Use information to spark reflection. Observations from data can be an opportunity for self-discovery. It is not the final word, but a starting point for reflection. *Example*: Myers-Briggs, StrengthsFinder, etc.
 
 ---
@@ -118,11 +124,18 @@ background-size: cover
 # Let's try it out
 
 ???
+
 ### Notes:
-- *Step 1*:  Split room in half.  Then, split each half into 2 sections.  These sections correspond to ‘Snap Judgment’ and ‘Data Only’
-- *Step 2*:  Select one person from each section to go through a pre-plan process
-- *Step 3*:  Hand out sheets
-- *Step 4*:  For each group, ask “What was missing?”, “How close was this to a rushed PCP pre-plan?”
+
+- *Step 1*:  Split room in half.  Then, split each half into groups of 7-10.  These sections correspond to ‘Snap Judgment’ and ‘Data Only’
+- *Step 2*:  Select one person from each group to go through a pre-plan process.  'Data Only' groups get a page, 'Snap Judgment' groups get a person.
+- *Step 3*:  Hand out sheets.  Mark on each sheet: 
+- *Step 4*:  Reflection.  
+
+For each group, ask: 
+- "What was missing?"
+- "What did you tend to focus on in developing?"
+- "How close was this to a rushed PCP pre-plan?""
 
 ---
 class: center, middle 
@@ -206,7 +219,7 @@ sample_1 %>%
 ### Notes:
 
 - Note that the items here are summarized by section, and thus don't get down to the most specific level of detail.  Discuss how to work with this during planning session.
-- Note that neither presenter is a trained SIS assessor or QI lead, and thus not specially trained in item intent.  Since Supports COordinators are also not likely to be trained as such, this allows us to speak to a more general utlitity of the assessment output.
+- Note that neither presenter is a trained SIS assessor or QI lead, and thus not specially trained in item intent.  Since Supports Coordinators are also not likely to be trained as such, this allows us to speak to a more general utlitity of the assessment output.
 
 ---
 class: center, middle 
@@ -290,9 +303,11 @@ knitr::include_graphics("images/weather.JPG")
 ## Act natural
 
 ???
+
 ### Notes:
 - Conversational data...
 - Can you think of a way to have a natural conversation using the data shown here?
+- What questions might you ask the person?
 - How might you use assessment data similarly?
 
 ---
@@ -406,6 +421,22 @@ background-size: 50% 100%
 # Demo
 ]
 
+???
+
+### Notes:
+
+Review the assessment before meeting with the person.
+
+Explain the process and where the information comes from.
+
+For each need that is identified as important, ask about:
+- *Maintain or Aspire?*  Is there a discrepancy between the person's current situation and what they want?
+- *Goals/Targets*  What concrete goals do we want to meet and by when?
+- *Supportive environment?*  What situations and people are most important to lead to success?
+- *Supports* What sources of support are available?  How might these best fit into the person's life?
+- *Next Steps* What steps will be taken to meet the stated Goals/Targets?
+- *Sequence* What is the order in which the person wants to address these issues?  Is there anything that has to be done first in order to accomplish this?
+
 ---
 class: left, top
 
@@ -444,6 +475,14 @@ sunburst_df %>%
   )
 
 ```
+
+???
+
+### Notes:
+
+- Think of this like a layered pie chart, with each layer going outward breaking down the interior layers into subcategories.
+- In each concentric ring, within each color, a darker hue corresponds to a greater need
+- We could further refine this to emphasize items that the person or their family had incated as important.
 
 ---
 class: center, middle
